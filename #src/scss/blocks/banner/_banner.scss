@@ -1,0 +1,89 @@
+.banner {
+    margin: 60px 0;
+}
+
+.banner__body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url('../img/blog/blog-pattern.png');
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+    padding: 42px 50px;
+    border-radius: 6px;
+
+    @media screen and (max-width: $wwa + px) {
+      padding: 32px;
+    }
+
+    @media screen and (max-width: $wwa2 + px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @media screen and (max-width: $wwa3 + px) {
+      padding: 24px 16px;
+    }
+}
+
+.banner__content {
+
+}
+
+.banner-title {
+    font-family: $ffMain;
+    font-size: 24px;
+    font-weight: 700;
+
+    @media screen and (max-width: $wwa + px) {
+      font-size: 20px;
+    }
+
+    @media screen and (max-width: $wwa3 + px) {
+      font-size: 18px;
+    }
+}
+
+.banner-text {
+    font-size: 16px;
+    margin: 6px 0 0 0;
+
+    @media screen and (max-width: $wwa + px) {
+      font-size: 14px;
+    }
+}
+
+.banner__buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    & .banner-btn {
+
+        &:first-child {
+            margin: 0 12px 0 0;
+    
+            @media screen and (max-width: $wwa2 + px) {
+                // margin: 0 0 4px 0;
+            }
+        }
+    }
+    @media screen and (max-width: $wwa2 + px) {
+        margin: 24px 0 0 0;
+    }
+    
+    @media screen and (max-width: $wwa3 + px) {
+        margin: 16px 0 0 0;
+    }
+}
+
+.banner-btn {
+    
+    @media screen and (max-width: $wwa + px) {
+        font-size: 14px;
+    }
+    
+    @media screen and (max-width: $wwa3 + px) {
+        margin: 8px 0 0 0;
+    }
+}

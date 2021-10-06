@@ -1,0 +1,152 @@
+.header__down {
+  padding: 10px 0;
+
+  @media screen and (max-width: $wwa3 + px) {
+    display: none;
+  }
+}
+
+.header__down__body {
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: $wwa3 + px) {
+    & .header__burger {
+      display: none;
+    }
+  }
+}
+
+.header__nav {
+  margin: 0 auto 0 16px;
+
+  @media screen and (max-width: $wwa2 + px) {
+    display: none; 
+  }
+}
+
+.header__nav__list li a {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 6px;
+  transition: 0s;
+
+  &:hover {
+    background: $link-hover;
+    color: inherit;
+  }
+
+  & ~ .sub-menu {
+
+    // &:hover {
+    //   visibility: visible;
+    //   opacity: 1;
+    // }
+  }
+}
+
+.header__nav__list {
+  display: flex;
+  align-items: center;
+
+  // &:hover {
+
+  //   & + .header__nav__list__items {
+  //     visibility: visible;
+  //     opacity: 1;
+  //   }
+  // }
+
+  & li {
+    position: relative;
+
+    &:hover {
+      
+      & .sub-menu {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.header__nav__list-text {
+
+}
+
+.menu-item-link-icon {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: -4px 0 0 6px;
+  transition: $tr;
+
+  & svg {
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.header__nav__list {
+
+  & li {
+    // transform: translate(0);
+    // opacity: 1;
+    // transition: $tr;
+
+    &._hidden {
+      transform: translate(-20px,0);
+      opacity: 0;
+    }
+
+    &:hover {
+
+      & .menu-item-link-icon {
+        margin: 0 0 0 6px;
+        transform: scale(-1);
+      }
+  
+      & .header__nav__list .sub-menu {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.header__nav__list .sub-menu {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  // grid-auto-flow: column;
+  transform: translate(0,100%);
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+  padding: 4px;
+  z-index: 2;
+  transition: visibility 0s ease 0s, opacity 150ms ease 0s;
+}
+
+.header__nav__list .sub-menu li a {
+  width: 100%;
+  display: inline-block;
+  margin: 4px 0;
+  white-space: nowrap;
+}
+
+.header__search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0 auto;
+}

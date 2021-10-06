@@ -1,0 +1,41 @@
+.advantages {
+
+}
+
+.container {
+
+}
+
+.advantages__body {
+
+}
+
+.advantages-text {
+
+  @media screen and (max-width: $wwa3 + px) {
+    font-size: 14px;
+  }
+}
+
+
+.title-bg {
+
+}
+
+.advantages__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 16px;
+  row-gap: 16px;
+  margin: 24px 0 0 0;
+
+  @media screen and (max-width: $wwa2 + px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 460px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@import '_card';

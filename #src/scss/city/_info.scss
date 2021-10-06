@@ -1,0 +1,43 @@
+.info {
+    margin: 64px 0 0 0;
+}
+
+.info__body {
+
+}
+
+.info__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.info__card {
+    background: #fff;
+    border-radius: 4px;
+    padding: 32px 42px;
+    transition: $tr;
+    
+    &:hover {
+        position: relative;
+        box-shadow: 0 4px 10px rgba(0,0,0,.1);
+        z-index: 1;
+    }
+}
+
+.info__card-icon {
+
+}
+
+.info__card-title {
+    font-size: 30px;
+    line-height: 1.1;
+    margin: 16px 0 0 0;
+}
+
+.info__card-text {
+    margin: 16px 0 0 0;
+}
+
+.info__card-btn {
+    margin: 16px 0 0 0;
+}

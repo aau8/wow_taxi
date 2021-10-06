@@ -1,0 +1,36 @@
+.news {
+  padding: 150px 0; 
+  margin: 0!important;
+
+  @media screen and (max-width: $wwa + px) { 
+    padding: 100px 0;
+  }
+
+  @media screen and (max-width: $wwa2 + px) { 
+    padding: 80px 0;
+  }
+
+  @media screen and (max-width: $wwa3 + px) { 
+    padding: 60px 0;
+  }
+}
+
+.news-post {
+  padding-top: 100px;
+}
+
+.news__body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 16px;
+  row-gap: 16px;
+  margin: 24px 0 0 0;
+
+  @media screen and (max-width: $wwa2 + px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 500px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

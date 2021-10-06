@@ -1,0 +1,21 @@
+.page__info {
+
+}
+
+.page__info__body {
+
+}
+
+.page__info-title {
+
+}
+
+.page__info-text {
+    margin: 4px 0 0 0;
+    font-size: 16px;
+    color: $second;
+
+    @media screen and (max-width: $wwa2 + px) {
+        font-size: 14px;
+    }
+}

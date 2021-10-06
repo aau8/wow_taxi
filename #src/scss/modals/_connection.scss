@@ -1,0 +1,30 @@
+.connection__body {
+
+    @media screen and (max-width: 400px) {
+      padding: 24px 0 0 0;
+    }
+}
+
+.connection__content {
+
+    @media screen and (max-width: 400px) {
+      border-radius: 6px 6px 0 0;
+    }
+}
+
+.connection__social {
+    margin: 12px 0 0 0;
+}
+
+.connection__form {
+    margin: 32px 0 0 0;
+}
+
+.connection__form__body {
+    display: grid;
+    row-gap: 8px;
+}
+
+.connection__form-btn {
+    margin: 8px 0 0 0;
+}

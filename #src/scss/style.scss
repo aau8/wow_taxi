@@ -1,0 +1,330 @@
+// Шрифты
+$ffMain: 'Raleway', sans-serif;
+$ffHeader: 'PT Sans Narrow', sans-serif;
+
+$minHover: 768; // если хочешь убрать hover на телефонах, укажи - 768px
+$tr: .2s; 
+
+// Переменные разрешения экрана (адаптив)
+$wwa: 1200;
+$wwa2: 900;
+$wwa3: 670;
+
+@import 'elements/_colors';
+
+// Обнуление и общие параметры
+@import '_reset';
+
+html {
+  scroll-behavior: smooth; // делает плавные переходы по якорям
+} 
+
+body {
+  color: $main;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 120%;
+  &._lock {
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: $wwa3 + px) {
+    font-size: 14px; 
+  }
+}
+
+// Главная оболочка
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+// Контейнер и переменные
+$maxWidthContainer: 1160;
+$maxWidthContainerwwa: 840;
+$maxWidthContainerwwa2: 612;
+
+$paddingContainer: 24;
+$paddingContainerwwa2: 16;
+
+.container {
+  max-width: $maxWidthContainer + ($paddingContainer * 2) + px;
+  margin: 0 auto;
+  padding: 0 $paddingContainer + px; 
+
+  @media screen and (max-width: $wwa + px) {
+    max-width: $maxWidthContainerwwa + ($paddingContainer * 2) + px;
+    padding: 0 $paddingContainer + px;
+  }
+
+  @media screen and (max-width: $wwa2 + px) { 
+    max-width: $maxWidthContainerwwa2 + ($paddingContainerwwa2 * 2) + px;
+    padding: 0 $paddingContainerwwa2 + px;
+  }
+}
+
+.header .container {
+  max-width: 1720px;
+  margin: 0 auto;
+  padding: 0 $paddingContainer + px; 
+
+  @media screen and (max-width: $wwa + px) {
+    max-width: $maxWidthContainerwwa + ($paddingContainer * 2) + px;
+    padding: 0 $paddingContainer + px;
+  }
+
+  @media screen and (max-width: $wwa2 + px) { 
+    max-width: $maxWidthContainerwwa2 + ($paddingContainerwwa2 * 2) + px;
+    padding: 0 $paddingContainerwwa2 + px;
+  }
+}
+
+a {
+  color: $main;
+  transition: $tr;
+}
+
+a:hover {
+  color: $accent;
+}
+
+// Общие стили
+.section {
+  margin: 150px 0; 
+
+  @media screen and (max-width: $wwa + px) { 
+    margin: 100px 0;
+  }
+
+  @media screen and (max-width: $wwa2 + px) { 
+    margin: 80px 0;
+  }
+
+  @media screen and (max-width: $wwa3 + px) { 
+    margin: 60px 0;
+  }
+}
+
+.tooltip {
+  display: inline-block;
+  padding: 4px 8px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 170px;
+  transform: translate(-50%,-105%);
+  font-size: 12px;
+  font-weight: 600;
+  color: $second!important;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.2);
+  visibility: hidden;
+  opacity: 0;
+  transition: $tr;
+  pointer-events: none;
+}
+
+[data-tooltip] {
+
+  &:hover {
+
+    & .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+  } 
+}
+
+.arrow-up {
+  display: inline-block;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255,255,255,.5);
+  border: 1px solid #c3c3c3;  
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+  transform: scale(.9);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .2s, transform .2s, visibility .2s;
+  z-index: 1;
+
+  &._show {
+    transform: scale(1);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &:active {
+    transform: scale(0.9); 
+  }
+
+  & svg path {
+    stroke: $main;
+  }
+
+  @media screen and (min-width: $minHover) { 
+    &:hover {
+      transform: translate(0,-4px);
+    }
+
+    &:active {
+      transform: translate(0,-4px) scale(0.9);
+    }
+  }
+}
+
+button.submit {
+  position: relative;
+
+  & .submit-text {
+    transition: $tr;
+    user-select: none;
+  }
+
+  & .submit-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    transition: $tr;
+    visibility: hidden;
+    opacity: 0;
+
+    & svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &._loader {
+    pointer-events: none;
+
+    & .submit-text {
+      opacity: 0;
+    }
+
+    & .submit-loader {
+      visibility: visible;
+      opacity: 1;
+      
+      & svg {
+        animation: conditionLoader 1s linear 0s infinite;
+      }
+    }
+
+  }
+}
+
+@keyframes conditionLoader {
+  from {
+      transform: rotate(0);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+@import 'elements/text/_tags';
+@import 'elements/text/_classes';
+
+
+// Стили для кнопок
+@import 'elements/_button';
+
+// Стили для элементов форм (инпуты, поля сообщений, кнопки и пр.)
+// @import 'elements/form/_general';
+@import 'elements/form/_input';
+@import 'elements/form/_textarea';
+@import 'elements/form/_checkbox';
+@import 'elements/form/_radio';
+@import 'elements/form/_select';
+@import 'elements/form/_select-more';
+// @import 'elements/form/_checkbox-police';
+// @import 'elements/form/_radio';
+
+@import '_cookie';
+
+
+// @import 'elements/_modal';
+
+// .starting-image {
+//   width: 100%;
+//   height: 100%;
+// }
+
+// .zoomify {
+//   display: inline-block;
+//   position: relative;
+//   overflow: hidden;
+// }
+
+// .zoomify::after {
+//   content: '';
+//   position: absolute;
+//   z-index: 1;
+//   width: 100%;
+//   height: 100%;
+//   opacity: 0;
+//   background-image: url("https://images.unsplash.com/photo-1528763216729-fb67cba479db?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=728e3916b52b079634aa7c7f82af612d&auto=format&fit=crop&w=6774&q=80%206774w,%20https://images.unsplash.com/photo-1528763216729-fb67cba479db?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=728e3916b52b079634aa7c7f82af612d&auto=format&fit=crop&w=6774&q=80%206774w");
+//   background-size: cover;
+//   background-position: center center;
+//   background-repeat: no-repeat;
+//   will-change: background-position;
+// }
+
+// .zoomify:hover .starting-image {
+//   opacity: 0;
+//   position: absolute;
+// }
+
+// .zoomify:hover::after {
+//   opacity: 1;
+//   background-size: 250%;
+//   cursor: zoom-in;
+//   background-position: calc(var(--mouse-x) * 1%) calc(var(--mouse-y) * 1%);
+// }
+
+@import 'ymaps-style';
+@import 'blocks/header/_header';
+@import 'blocks/main/_main';
+@import 'blocks/advantages/_advantages';
+@import 'blocks/calc/_calc';
+@import 'blocks/region/_region';
+@import 'blocks/brand/_brand';
+@import 'blocks/news/_news';
+@import 'blocks/blog/_article';
+@import 'blocks/clients/_clients';
+@import 'blocks/reviews/_reviews';
+@import 'blocks/faq/_faq';
+@import 'blocks/support/_support';
+@import 'blocks/footer/_footer';
+@import 'blocks/404/_404';
+
+@import 'blocks/bread-crumbs/_bread.scss';
+@import 'blog/_search';
+@import 'blog/_posts';
+@import 'blog/_pagination';
+@import 'post/_content';
+@import 'post/_offer-post';
+@import 'contacts/_contacts';
+@import 'cities/_cities';
+@import 'city/_city';
+@import 'post/_tags';
+@import 'order/_order';
+@import 'page/_info';
+@import 'review/_review';
+@import 'modals/_main';

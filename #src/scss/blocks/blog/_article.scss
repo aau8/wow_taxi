@@ -1,0 +1,159 @@
+.article {
+  // width: 375px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: $tr;
+
+  &:hover {
+    transform: translate(0,-5px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  }
+}
+
+.article__header {
+  width: 100%;
+  position: relative;
+}
+
+.article-img {
+  width: 100%;
+  height: 180px;
+  display: block;
+  position: relative;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.2);
+  }
+}
+
+.article-robot {
+  position: absolute!important;
+  bottom: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+
+  & svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+
+    & .article-robot-eyes {
+      opacity: 1;
+    }
+  }
+
+  &-eyes {
+    transition: $tr;
+  }
+
+  &-tooltip {
+    left: 0;
+    transform: translate(-100%, -105%)
+  }
+}
+
+.article__info {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.article__date,
+.article__write-time {
+  display: flex;
+  align-items: center;
+}
+
+.article__date-icon,
+.article__write-time-icon {
+  width: 16px;
+  height: 16px;
+
+  & img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.article__date-text,
+.article__write-time-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0 4px;
+}
+
+.article__write-time {
+  margin: 0 0 0 16px;
+}
+
+.article__body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 12px;
+}
+
+.article__tags {
+
+}
+
+.article-categories li {
+  margin-top: 0!important;
+  margin-bottom: 0!important;
+}
+
+.article-title {
+  font-family: $ffMain;
+  font-size: 20px;
+  font-weight: 600;
+  
+  @media screen and (max-width: $wwa + px) {
+    font-size: 16px;
+  }
+  
+  @media screen and (max-width: 500px) {
+    font-size: 18px;
+  }
+}
+
+.article-title-link {
+  margin: 8px 0 16px 0;
+
+}
+
+// .article-text {
+//   margin: 4px 0 0 0;
+
+//   @media screen and (max-width: $wwa + px) {
+//     font-size: 14px;
+//   }
+// }
+
+.article-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: auto 0 0 auto;
+}

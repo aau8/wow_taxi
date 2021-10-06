@@ -1,0 +1,19 @@
+.offer-post {
+    margin: 32px 0;
+
+    & .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.offer-post-link {
+    display: inline-block;
+    width: fit-content;
+    font-size: 15px;
+    font-weight: 500;
+    color: $second;
+    text-align: center;
+    margin: 0 auto;
+}

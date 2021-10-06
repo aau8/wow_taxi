@@ -1,0 +1,90 @@
+h1,h2,h3,h4,h5,h6 {
+  font-family: $ffHeader;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+
+  & span {
+    color: $accent;
+  }
+
+  @media screen and (max-width: $wwa3 + px) {
+    font-size: 36px;
+  }
+}
+
+h2 {
+  font-family: $ffHeader;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+
+  &::before {
+    content: attr(data-title-bg);
+    position: absolute;
+    top: -6px;
+    left: -44px;
+    font-family: sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    color: #f7f7f7;
+    text-transform: uppercase;
+    z-index: -1;
+
+    @media screen and (max-width: $wwa3 + px) {
+      font-size: 30px;
+      left: -12px;
+    }
+  }
+
+  @media screen and (max-width: $wwa3 + px) {
+    font-size: 20px;
+  }
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+p {
+
+}
+
+span {
+
+}
+
+a {
+
+}
+
+ul {
+
+}
+
+ol {
+
+}
+
+ul li,
+ol li{
+
+}
+
+strong {
+  
+}

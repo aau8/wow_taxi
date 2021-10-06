@@ -1,0 +1,31 @@
+.bread {
+    margin: 24px 0;
+}
+
+.bread__list {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumbs span {
+
+    font-size: 14px;
+    font-weight: 600;
+    
+    & a {
+        color: $second;
+
+        &:hover {
+            color: $accent;
+        }
+    }
+
+    &.breadcrumbs__separator {
+        margin: 0 3px;
+    }
+
+    &.breadcrumbs__current {
+        font-size: 14px;
+        opacity: .7;
+    }
+}

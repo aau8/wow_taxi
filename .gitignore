@@ -1,0 +1,11 @@
+# Gulp
+node_modules/
+package-lock.json
+
+# WP
+index
+uploads/
+upgrade/
+themes/
+plugins/
+languages/

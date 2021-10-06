@@ -1,0 +1,89 @@
+.calc__date__body {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.calc__date__inputs {
+    display: none;
+
+    &._show {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        @media screen and (max-width: 520px) {
+            margin: 12px 0 0 0; 
+        }
+
+        & .input {
+            height: 32px;
+
+            &::before,
+            &::after {
+                display: none;
+            }
+
+            & input {
+                font-family: sans-serif;
+                text-align: center;
+                padding: 11px 0 9px 0;
+            }
+
+            & select {
+                font-family: sans-serif;
+                text-align: center;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                padding: 0;
+
+                &::-webkit-scrollbar {
+                    width: 5px;
+                    background-color: #F1F1F1;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: #C1C1C1;
+                }
+
+                & option {
+                    font-family: sans-serif;
+                }
+            }
+        }
+
+        .calc__date__date {
+
+            & .input {
+                width: 90px;
+            }
+        }
+
+        .calc__date__time {
+            margin: 0 0 0 10px;
+
+            & .input {
+                width: 35px;
+            }
+
+            & span {
+                font-weight: 600;
+                margin: 0 5px;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+.calc__date__date {
+    display: flex;
+    align-items: center;
+
+}
+
+.calc__date__time {
+    display: flex;
+    align-items: center;
+
+}

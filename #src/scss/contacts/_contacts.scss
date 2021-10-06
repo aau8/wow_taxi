@@ -1,0 +1,144 @@
+.contacts {
+}
+
+.contacts-title {
+    
+}
+
+.contacts__body {
+    margin: 0 0 64px 0;
+
+}
+
+.contacts__connection,
+.contacts__coop {
+    margin: 24px 0 0 0;
+}
+
+.contacts__connection__body,
+.contacts__coop__body {
+    width: fit-content;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(4, auto);
+    column-gap: 48px;
+    margin: 12px 0 0 0;
+
+    & .contacts__connection__block {
+        width: fit-content;
+
+        @media screen and (max-width: $wwa2 + px) {
+          margin: 6px 0;
+
+          &:last-child {
+              margin: 12px 0 0 0;
+          }
+        }
+
+        &:not(:last-child) {
+            padding: 0 48px 0 0;
+
+            @media screen and (min-width: $wwa2 + px) {
+                position: relative;
+        
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translate(0,-50%);
+                    width: 1px;
+                    height: 20px;
+                    background: $outline;
+                }
+            }
+        }
+    }
+
+    // & a,
+    // & ul {
+    //     margin: 0 48px;
+    //     position: relative;
+        
+    //     &::before {
+    //         content: '';
+    //         position: absolute;
+    //         top: 0;
+    //         right: 0;
+    //         width: 1px;
+    //         height: 100%;
+    //         background: $outline;
+    //     }
+    // }
+
+    @media screen and (max-width: $wwa2 + px) {
+      grid-template-columns: repeat(1, auto);
+    }
+}
+
+.contacts__phone {
+    
+    &:not(:first-child) {
+        // padding-left: 48px;
+    }
+    
+    &:not(:last-child) {
+        // padding-right: 48px;
+    }
+}
+
+.contacts__phone-icon {
+
+}
+
+.contacts__phone-text {
+    font-weight: 600;
+}
+
+.contacts__social {
+    display: flex;
+    align-items: center;
+
+    & li:not(:last-child) {
+        margin: 0 12px 0 0;
+    }
+
+    & a {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        background: rgba(0,0,0,.05);
+        border-radius: 50px;
+
+        & svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.footer__up__support {
+
+}
+
+.contacts__support {
+    margin: 0; 
+}
+
+.footer__up__support-text {
+
+}
+
+.footer__up__support-icon {
+
+}
+
+.contacts-subtitle {
+    font-family: $ffMain;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.contacts__coop__body {
+
+}
